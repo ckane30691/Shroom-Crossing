@@ -17,7 +17,7 @@ Enemy.prototype.update = function(dt) {
     var distance = Math.sqrt(dx * dx + dy * dy);
     
     if (distance < this.radius + player.radius) {
-        console.log("Collision detected")
+        location.reload();
     };
 };
 
