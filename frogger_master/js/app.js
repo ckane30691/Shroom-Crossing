@@ -47,6 +47,7 @@ Player.prototype.render = function(){
 };
 
 var score = 0;
+$('.score').append(score);
 
 Player.prototype.handleInput = function(input){
     if(!input) return;
@@ -68,7 +69,8 @@ Player.prototype.handleInput = function(input){
     this.x = this.x > 400 ? 400 : this.x;
     this.y = this.y > 400 ? 400 : this.y;
     if (this.win === true){
-        console.log(score+=1);
+        score+=1;
+        $(".score").html(score);
     };
 };
 
