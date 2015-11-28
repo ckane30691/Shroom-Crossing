@@ -70,6 +70,10 @@ Player.prototype.handleInput = function(input){
     this.y = this.y > 400 ? 400 : this.y;
     if (this.win === true){
         score+=1;
+        var audio = document.createElement("audio");
+        audio.src = "soundfx/achievement.wav";
+        audio.volume = .5;
+        audio.play();
         $(".score").html(score);
     };
 };
