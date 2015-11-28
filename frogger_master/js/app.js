@@ -17,10 +17,10 @@ Enemy.prototype.update = function(dt) {
     var distance = Math.sqrt(dx * dx + dy * dy);
     
     if (distance < this.radius + player.radius) {
-        var audio = document.createElement("audio");
-        audio.src = "soundfx/nooo.wav";
-        audio.volume = .2;
-        audio.play();
+        var death = document.createElement("audio");
+        death.src = "soundfx/nooo.wav";
+        death.volume = .2;
+        death.play();
         setTimeout(function(){location.reload()}, 500);
     };
 };
@@ -46,9 +46,6 @@ Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var score = 0;
-$('.score').append(score);
-
 Player.prototype.handleInput = function(input){
     if(!input) return;
     var moveToX = {
@@ -70,11 +67,11 @@ Player.prototype.handleInput = function(input){
     this.y = this.y > 400 ? 400 : this.y;
     if (this.win === true){
         score+=1;
-        var audio = document.createElement("audio");
-        audio.src = "soundfx/achievement.wav";
-        audio.volume = .5;
-        audio.play();
-        $(".score").html(score);
+        var achievement = document.createElement("audio");
+        achievement.src = "soundfx/achievement.wav";
+        achievement.volume = .5;
+        achievement.play();
+        $(".score").html("Score: " + score);
     };
 };
 
@@ -92,3 +89,9 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+var score = 0;
+$('.score').append(score);
+
+var ambiance = document.createElement("audio");
+    ambiance.src = "soundfx/pixelland.mp3";
+    ambiance.play();
