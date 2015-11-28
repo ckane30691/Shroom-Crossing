@@ -180,6 +180,9 @@ var Engine = (function(global) {
     audio.src = "soundfx/pixelland.mp3";
     audio.play();
 
+    function gameReset() {
+        location.reload();
+    };
     /* Assign the canvas' context object to the global variable (the window
      * object when run in a browser) so that developer's can use it more easily
      * from within their app.js files.

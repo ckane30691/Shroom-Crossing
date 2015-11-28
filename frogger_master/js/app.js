@@ -17,7 +17,11 @@ Enemy.prototype.update = function(dt) {
     var distance = Math.sqrt(dx * dx + dy * dy);
     
     if (distance < this.radius + player.radius) {
-        location.reload();
+        var audio = document.createElement("audio");
+        audio.src = "soundfx/nooo.wav";
+        audio.volume = .2;
+        audio.play();
+        setTimeout(function(){location.reload()}, 500);
     };
 };
 
@@ -42,6 +46,8 @@ Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+var score = 0;
+
 Player.prototype.handleInput = function(input){
     if(!input) return;
     var moveToX = {
@@ -53,14 +59,17 @@ Player.prototype.handleInput = function(input){
         'up': -83,
         'down': 83
     };
+
     this.x += moveToX[input] || 0;
     this.y += moveToY[input] || 0; 
     this.win = this.y < 0 ? true : false;
     this.x = this.x < 0 ? 0 : this.x;
     this.y = this.y < 0 ? 400 : this.y;
     this.x = this.x > 400 ? 400 : this.x;
-    this.y = this.y > 400 ? 400 : this.y; 
-
+    this.y = this.y > 400 ? 400 : this.y;
+    if (this.win === true){
+        console.log(score+=1);
+    };
 };
 
 var allEnemies = [new Enemy(0, 63), new Enemy(200, 146), new Enemy(400, 229)];
@@ -76,3 +85,4 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
