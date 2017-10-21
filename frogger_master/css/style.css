@@ -1,7 +1,31 @@
 body {
     text-align: center;
+    background-color: #f0f7da;
+    font-family: 'Permanent Marker', cursive;
+    position: relative;
+    color: 	#18453b;
+}
+
+img {
+  height: 250px;
+  width: 200px;
+  margin-top: -100px;
+}
+
+.title {
+  color: 	#007936;
 }
 
 .score {
-	font-family: 'Orbitron', sans-serif;
+  position: absolute;
+  right: 100px;
+}
+
+.instructions {
+  position: absolute;
+  left: 50px;
+}
+
+canvas {
+  margin: auto;
 }

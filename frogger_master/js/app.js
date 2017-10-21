@@ -8,14 +8,14 @@ var Enemy = function(x, y) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     this.x += 100*dt;
-    this.x = this.x > 500 ? -100 : this.x;
+    this.x = this.x > 800 ? -100 : this.x;
 
     //Collision Detection Algo
     this.radius = 20;
     var dx = (this.x + this.radius) - (player.x + player.radius);
     var dy = (this.y + this.radius) - (player.y + player.radius);
     var distance = Math.sqrt(dx * dx + dy * dy);
-    
+
     if (distance < this.radius + player.radius) {
         var death = document.createElement("audio");
         death.src = "soundfx/nooo.wav";
@@ -52,18 +52,18 @@ Player.prototype.handleInput = function(input){
         'left': -100,
         'right': 100
     };
-    
+
     var moveToY = {
         'up': -83,
         'down': 83
     };
 
     this.x += moveToX[input] || 0;
-    this.y += moveToY[input] || 0; 
+    this.y += moveToY[input] || 0;
     this.win = this.y < 0 ? true : false;
     this.x = this.x < 0 ? 0 : this.x;
     this.y = this.y < 0 ? 400 : this.y;
-    this.x = this.x > 400 ? 400 : this.x;
+    this.x = this.x > 700 ? 700 : this.x;
     this.y = this.y > 400 ? 400 : this.y;
     if (this.win === true){
         score+=1;
