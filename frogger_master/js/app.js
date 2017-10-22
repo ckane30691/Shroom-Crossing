@@ -1,4 +1,4 @@
-var allEnemies = [new Enemy(0, 312), new Enemy(200, 146), new Enemy(400, 229)];
+var allEnemies = [new Enemy(600, 60, {boss: false}), new Enemy(200, 146, {boss: false}), new Enemy(400, 229, {boss: false}), new Enemy(0, 312, {boss: false}), new Enemy(0, 400, {boss: true})];
 var player = new Player(100, 400);
 
 document.addEventListener('keyup', function(e) {
@@ -12,11 +12,15 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+// Prevent window scrolling on up or down keypress
+window.onkeydown = (e) => {
+  if ((e.keyCode == 38 || e.keyCode == 40) && e.target == document.body) {
+    e.preventDefault();
+  }
+};
+
 var score = 0;
 $('.score').append(score);
-
-var ambiance = document.getElementsByClassName("theme")[0];
-    ambiance.play();
 
 let muteBtn = document.getElementsByClassName("mute")[0];
 muteBtn.onclick = () => {

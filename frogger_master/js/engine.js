@@ -4,6 +4,12 @@
  * render methods on your player and enemy objects (defined in app.js).
  */
 
+ let startBtn = document.getElementsByClassName("start")[0];
+startBtn.onclick = () => {
+  startBtn.className += " hidden"
+  let theme = document.getElementsByClassName("theme")[0];
+  theme.play()
+
 var Engine = (function(global) {
 
     var doc = global.document,
@@ -50,14 +56,16 @@ var Engine = (function(global) {
 
         var rowImages = [
                 'images/water-block.png',   // Top row is water
+                // 'images/blocks.png',   // Row 1 of 2 of grass
+                // 'images/blocks.png',   // Row 1 of 2 of grass
+                // 'images/blocks.png',   // Row 1 of 2 of grass
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/grass-block.png',    // Row 2 of 2 of grass
             ],
-            numRows = 7,
+            numRows = 6,
             numCols = 8,
             row, col;
 
@@ -86,12 +94,14 @@ var Engine = (function(global) {
 
     Resources.load([
         'images/stone-block.png',
+        'images/boss.png',
         'images/water-block.png',
         'images/grass-block.png',
         'images/luigi.png',
+        'images/blocks.png',
         'images/shroom.png'
     ]);
     Resources.onReady(init);
-
     global.ctx = ctx;
 })(this);
+}

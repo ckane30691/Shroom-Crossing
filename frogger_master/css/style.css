@@ -14,18 +14,58 @@ img {
 
 .title {
   color: 	#007936;
+  margin-bottom: -15px;
+}
+
+.mute {
+  background: none;
+  border: none;
+  font-family: 'Permanent Marker', cursive;
+  cursor: pointer;
+  font-size: 3em;
+  color: #18453b;
+  position: absolute;
+  right: 120px;
+  top: 150px;
+}
+
+.mute:hover {
+  color: #007936;
+  transform: scale(1.2);
+}
+
+.start {
+  margin-top: 50px;
+  border: none;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 6em;
+  cursor: pointer;
+  color: #5b477c;
+  background: none;
+}
+
+.start:hover {
+  transform: scale(1.2);
+
 }
 
 .score {
   position: absolute;
   right: 100px;
+  top: 60px;
 }
 
 .instructions {
   position: absolute;
   left: 50px;
+  top: 60px;
+}
+
+.hidden {
+  display: none;
 }
 
 canvas {
   margin: auto;
+  margin-bottom: 50px;
 }
