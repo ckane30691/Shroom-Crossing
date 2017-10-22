@@ -1,14 +1,35 @@
 // Enemies player must avoid
 var Enemy = function(x, y) {
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/luigi.png';
     this.x = x;
     this.y = y;
+    this.width = 2500;
+    this.height = 100;
+    this.tickCount = 0
+    this.numberOfFrames = 25.6;
+    this.ticksPerFrame = 10;
+    this.frameIndex = 0
 };
 
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     this.x += 100*dt;
     this.x = this.x > 800 ? -100 : this.x;
+
+    this.tickCount += 1;
+
+    if (this.tickCount > this.ticksPerFrame) {
+
+				this.tickCount = 0;
+
+        // If the current frame index is in range
+        if (this.frameIndex < this.numberOfFrames - 1) {
+            // Go to the next frame
+            this.frameIndex += 1;
+        } else {
+            this.frameIndex = 0;
+        }
+      }
 
     //Collision Detection Algo
     this.radius = 20;
@@ -25,11 +46,29 @@ Enemy.prototype.update = function(dt) {
     };
 };
 
+Enemy.prototype.render = function () {
+
+		  // Clear the canvas
+		  ctx.clearRect(0, 0, this.width, this.height);
+
+		  // Draw the animation
+		  ctx.drawImage(
+		    Resources.get(this.sprite),
+		    this.frameIndex * this.width / this.numberOfFrames,
+		    0,
+		    this.width / this.numberOfFrames,
+		    this.height,
+		    this.x,
+		    this.y,
+		    this.width / this.numberOfFrames,
+		    this.height);
+		};
 
 
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+
+// Enemy.prototype.render = function() {
+//     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+// };
 
 var Player = function(x, y){
     this.sprite = 'images/char-boy.png';
