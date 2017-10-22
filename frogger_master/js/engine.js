@@ -12,7 +12,7 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    canvas.width = 810;
+    canvas.width = 808;
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
@@ -89,7 +89,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/luigi.png',
-        'images/char-boy.png'
+        'images/shroom.png'
     ]);
     Resources.onReady(init);
 
