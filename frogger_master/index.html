@@ -2,20 +2,42 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Bugger</title>
+    <title>Shroom Crossing</title>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-  <h1 class="title">Frogger</h1>
+  <h1 class="title">Shroom Crossing</h1>
 	<h2 class="score">Score: </h2>
   <div class="instructions">
     <h2>Movement</h2>
     <img src="./images/arrow_keys.png" alt="arrow keys">
   </div>
+
+  <audio class="theme" src="./soundfx/Pixelland.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag
+  </audio>
+
+  <audio class="death" src="./soundfx/nooo.wav" type="audio/wav">
+    Your browser does not support the audio tag
+  </audio>
+
+  <audio class="achievement" src="./soundfx/achievement.wav" type="audio/wav">
+    Your browser does not support the audio tag
+  </audio>
+
+  <button class="mute">🕪</button>
+
+  <button class="start">Start</button>
+
     <script src="js/resources.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/player.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
+
+
+
 </body>
 </html>
