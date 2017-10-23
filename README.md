@@ -7,7 +7,7 @@ This is a take on the classic arcade game Frogger released by Konami in 1981. Th
 
 ## Background & Overview
 Oh no the natives are after you for your psychedelic properties and the government has sent robots in to regulate!
-![](https://s3-us-west-1.amazonaws.com/shroom-crossing/splash.PNG)
+![](https://s3-us-west-1.amazonaws.com/shroom-crossing/splash2.PNG)
 
 Your only hope is to score spore points by crossing the board to the river as many times as possible!
 ![](https://s3-us-west-1.amazonaws.com/shroom-crossing/Score.PNG)
