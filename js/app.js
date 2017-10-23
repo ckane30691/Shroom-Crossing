@@ -1,4 +1,11 @@
-var allEnemies = [new Enemy(600, 60, {boss: false}), new Enemy(200, 146, {boss: false}), new Enemy(400, 229, {boss: false}), new Enemy(0, 312, {boss: false}), new Enemy(0, 400, {boss: true})];
+var allEnemies = [
+  new Enemy(600, 60, {boss: false}),
+  new Enemy(200, 146, {boss: false}),
+  new Enemy(400, 229, {boss: false}),
+  new Enemy(0, 312, {boss: false}),
+  new Enemy(-150, 400, {boss: true})
+];
+
 var player = new Player(100, 400);
 
 document.addEventListener('keyup', function(e) {

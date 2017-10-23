@@ -93,8 +93,11 @@ var Engine = (function(global) {
     }
 
     Resources.load([
+        'images/death.png',
+        'images/hit.png',
         'images/stone-block.png',
         'images/boss.png',
+        'images/boss_hit.png',
         'images/water-block.png',
         'images/grass-block.png',
         'images/luigi.png',
