@@ -3,7 +3,27 @@ var allEnemies = [
   new Enemy(200, 146, {boss: false}),
   new Enemy(400, 229, {boss: false}),
   new Enemy(0, 312, {boss: false}),
-  new Enemy(-150, 400, {boss: true})
+  new Enemy(-150, 400, {boss: true}),
+  new Enemy(600, 40, {
+    boss: false,
+    numberOfFrames: 6,
+    width: 850,
+    height: 170,
+    reverse: true,
+    radius: 45,
+    vel: 100,
+    sprite: 'images/robot.png'
+  }),
+  new Enemy(0, 200, {
+    boss: false,
+    numberOfFrames: 6,
+    width: 850,
+    height: 170,
+    reverse: true,
+    radius: 45,
+    vel: 50,
+    sprite: 'images/robot.png'
+  })
 ];
 
 var player = new Player(100, 400);

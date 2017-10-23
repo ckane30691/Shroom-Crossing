@@ -94,6 +94,8 @@ var Engine = (function(global) {
 
     Resources.load([
         'images/death.png',
+        'images/robot.png',
+        'images/robot_attack.png',
         'images/hit.png',
         'images/stone-block.png',
         'images/boss.png',

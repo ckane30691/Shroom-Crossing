@@ -5,18 +5,31 @@ var Enemy = function(x, y, options) {
     this.ticksPerFrame = 4;
     this.frameIndex = 0
 		this.boss = options.boss
-		this.height = this.boss ? 160 : 130;
-    this.numberOfFrames = 4;
-		this.width = this.boss ? 590 : 510;
-		this.sprite = this.boss ? 'images/boss.png' :'images/luigi.png';
-		this.vel = this.boss ? 500 : Math.random() * (400 - 100) + 100
+    this.reverse = options.reverse || false
+		this.height = this.boss ? 160 : options.height || 130;
+    this.numberOfFrames = options.numberOfFrames || 4;
+		this.width = this.boss ? 590 : options.width || 510;
+		this.sprite = this.boss ? 'images/boss.png' : options.sprite || 'images/luigi.png';
+		this.vel = this.boss ? 500 : options.vel || Math.random() * (400 - 100) + 100
+    this.radius = options.radius || 20;
 };
 
 const yAxisSpawnPoints = [60, 146, 229, 312]
+const reverseAxisSpawnPoints = [40, 120, 200, 280]
 
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-	this.x -= this.vel*dt;
+  if (this.reverse == false) {
+    this.x -= this.vel*dt;
+  } else {
+    this.x += this.vel*dt;
+    this.y = this.x > 880 ?
+			reverseAxisSpawnPoints[Math.floor(Math.random() * reverseAxisSpawnPoints.length)]
+			: this.y;
+		this.vel = this.x > 880 ? this.vel < 650 ? this.vel += 10 : this.vel : this.vel
+		// console.log(this.vel);
+    this.x = this.x > 880 ? -90 : this.x;
+  }
 	if (this.boss) {
 		this.x = this.x < Math.floor(Math.random() * (-9000 - -3000) + -3000) ? 800 : this.x;
     this.vel = this.x < -5000 ? this.vel + 10 : this.vel
@@ -44,15 +57,17 @@ Enemy.prototype.update = function(dt) {
       }
 
     //Collision Detection Algo
-    this.radius = 20;
+
     var dx = (this.x + this.radius) - (player.x + player.radius);
-    var dy = (this.y + this.radius) - (player.y + player.radius);
+    var dy = (this.y + 20 + this.radius) - (player.y + player.radius);
     var distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < this.radius + player.radius) {
         this.vel = 0
         player.canMove = false;
-        this.sprite = this.boss ? 'images/boss_hit.png' : 'images/hit.png'
+        console.log(this.sprite);
+        this.sprite = this.sprite == 'images/robot.png' || this.sprite == 'images/robot_attack.png' ? 'images/robot_attack.png' : 'images/hit.png'
+        this.sprite = this.boss ? 'images/boss_hit.png' : this.sprite
         player.sprite = 'images/death.png'
         var death = document.getElementsByClassName("death")[0];
         death.play();
@@ -82,7 +97,7 @@ Enemy.prototype.render = function () {
           this.y,
           this.width / this.numberOfFrames,
           this.height);
-      } else if (this.sprite != 'images/hit.png') {
+      } else if (this.sprite != 'images/hit.png' && this.sprite != 'images/robot_attack.png') {
         ctx.drawImage(
           Resources.get(this.sprite),
           this.frameIndex * this.width / this.numberOfFrames,
