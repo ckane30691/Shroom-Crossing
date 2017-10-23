@@ -12,7 +12,7 @@ Oh no the natives are after you for your psychedelic properties and the governme
 Your only hope is to score spore points by crossing the board to the river as many times as possible!
 ![](https://s3-us-west-1.amazonaws.com/shroom-crossing/Score.PNG)
 
-Watch out for enemies, the longer you play the faster they get.
+Watch out for enemies, the longer you play the faster they get!
 ![](https://s3-us-west-1.amazonaws.com/shroom-crossing/enemy.PNG)
 
 ## Architecture & Technologies
