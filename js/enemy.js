@@ -38,7 +38,7 @@ Enemy.prototype.update = function(dt) {
 			yAxisSpawnPoints[Math.floor(Math.random() * yAxisSpawnPoints.length)]
 			: this.y;
 		this.vel = this.x < -90 ? this.vel < 650 ? this.vel += 10 : this.vel : this.vel
-		console.log(this.vel);
+		// console.log(this.vel);
     this.x = this.x < -90 ? 800 : this.x;
 	}
     this.tickCount += 1;
@@ -65,7 +65,7 @@ Enemy.prototype.update = function(dt) {
     if (distance < this.radius + player.radius) {
         this.vel = 0
         player.canMove = false;
-        console.log(this.sprite);
+        // console.log(this.sprite);
         this.sprite = this.sprite == 'images/robot.png' || this.sprite == 'images/robot_attack.png' ? 'images/robot_attack.png' : 'images/hit.png'
         this.sprite = this.boss ? 'images/boss_hit.png' : this.sprite
         player.sprite = 'images/death.png'
