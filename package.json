@@ -4,6 +4,7 @@
   "description": "![](https://s3-us-west-1.amazonaws.com/shroom-crossing/splash1.png)",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon ./config/port.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.35.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
   }
 }
