@@ -1,0 +1,28 @@
+{
+  "name": "Shroom-Crossing",
+  "version": "1.0.0",
+  "description": "![](https://s3-us-west-1.amazonaws.com/shroom-crossing/splash1.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckane30691/Shroom-Crossing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckane30691/Shroom-Crossing/issues"
+  },
+  "homepage": "https://github.com/ckane30691/Shroom-Crossing#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.35.1"
+  }
+}
