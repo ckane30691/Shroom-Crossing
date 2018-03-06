@@ -11,8 +11,14 @@ module.exports = {
       highScore: {
         type: Sequelize.INTEGER
       },
-      allScores: {
-        type: Sequelize.ARRAY(Sequelize.TEXT)
+      userId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'userId',
+        }
       },
       createdAt: {
         allowNull: false,
