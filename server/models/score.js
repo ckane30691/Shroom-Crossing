@@ -5,13 +5,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-
-    allScores: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
-      allowNull: false
-    }
-
   }, {});
+  
   Score.associate = function(models) {
     Score.belongsTo(models.User, {
       foreignKey: 'userId',
