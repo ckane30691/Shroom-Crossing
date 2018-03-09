@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {});
   Score.associate = function(models) {
-    // associations can be defined here
+    Score.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    });
   };
   return Score;
 };
