@@ -1,7 +1,7 @@
 const User = require('../models').User;
 const jwt = require('jsonwebtoken');
 
-module.exports = {
+module.exports = {  
   create(req, res) {
     let token = req.body.token || req.query.token || req.headers['x-access-token'];
     if (!token) {
@@ -16,4 +16,5 @@ module.exports = {
     });
   });
   }
+
 };
