@@ -1,4 +1,5 @@
 'use strict';
+// const token = require('./authentication/token');
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
     username: {
@@ -8,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     sessionToken: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    generateSessionToken: (req) => {
+      const accessToken = token.generateAccessToken(req.user.id);
     }
   }, {});
 

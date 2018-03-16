@@ -13,7 +13,7 @@ module.exports = {
     passport.authenticate(
       'google',
       { session: false }
-    ).then(() => User.generateSessionToken);
+    ).then((req) => User.generateSessionToken(req));
   },
   create(req, res) {
     let token = req.body.token || req.query.token || req.headers['x-access-token'];
