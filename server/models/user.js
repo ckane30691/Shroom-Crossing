@@ -1,5 +1,5 @@
 'use strict';
-// const token = require('./authentication/token');
+const token = require('../config/token');
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
     username: {
