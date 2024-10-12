@@ -12,6 +12,25 @@ img {
   margin-top: -100px;
 }
 
+.mute-image {
+  height: 50px;
+  width: 50px;
+}
+
+.mute-label {
+  font-size: x-large;
+  position: absolute;
+  left: -70px;
+  top: 10px;
+}
+
+.unmute-label {
+  font-size: x-large;
+  position: absolute;
+  left: -95px;
+  top: 10px;
+}
+
 .title {
   color: 	#007936;
   margin-bottom: -15px;
@@ -25,7 +44,7 @@ img {
   font-size: 3em;
   color: #18453b;
   position: absolute;
-  right: 120px;
+  right: 60px;
   top: 150px;
 }
 

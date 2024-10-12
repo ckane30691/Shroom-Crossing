@@ -59,5 +59,5 @@ muteBtn.onclick = () => {
   achievementSound.muted = achievementSound.muted ? false : true;
   theme.muted = theme.muted ? false : true;
   muteBtn.className = muteBtn.className === "mute true" ? "mute" : "mute true"
-  muteBtn.className === "mute true" ? muteBtn.innerHTML = "🕨" : muteBtn.innerHTML = "🕪"
+  muteBtn.className === "mute true" ? muteBtn.innerHTML = "<span class=\"mute-label\">Mute:</span><img class=\"mute-image\" src=\"./images/unmute.svg\" />" : muteBtn.innerHTML = "<span class=\"unmute-label\">Unmute:</span><img class=\"mute-image\" src=\"./images/mute.svg\" />"
 }

@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Shroom Crossing</title>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <meta charset="UTF-8">
-</head>
-<body>
-  <h1 class="title">Shroom Crossing</h1>
-	<h2 class="score">Score: </h2>
-  <div class="instructions">
-    <h2>Movement</h2>
-    <img src="./images/arrow_keys.png" alt="arrow keys">
-  </div>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Shroom Crossing</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script
+			src="https://kit.fontawesome.com/a076d05399.js"
+			crossorigin="anonymous"
+		></script>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<h1 class="title">Shroom Crossing</h1>
+		<h2 class="score">Score:</h2>
+		<div class="instructions">
+			<h2>Movement</h2>
+			<img src="./images/arrow_keys.png" alt="arrow keys" />
+		</div>
 
-  <audio class="theme" src="./soundfx/Pixelland.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag
-  </audio>
+		<audio class="theme" src="./soundfx/Pixelland.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag
+		</audio>
 
-  <audio class="death" src="./soundfx/nooo.wav" type="audio/wav">
-    Your browser does not support the audio tag
-  </audio>
+		<audio class="death" src="./soundfx/nooo.wav" type="audio/wav">
+			Your browser does not support the audio tag
+		</audio>
 
-  <audio class="achievement" src="./soundfx/achievement.wav" type="audio/wav">
-    Your browser does not support the audio tag
-  </audio>
+		<audio class="achievement" src="./soundfx/achievement.wav" type="audio/wav">
+			Your browser does not support the audio tag
+		</audio>
 
-  <button class="mute">🔇</button>
+		<button class="mute true">
+			<span class="mute-label">Mute:</span>
+			<img class="mute-image" src="./images/unmute.svg" />
+		</button>
 
-  <button class="start">Start</button>
+		<button class="start">Start</button>
 
-    <script src="js/resources.js"></script>
-    <script src="js/enemy.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
-
-
-
-</body>
+		<script src="js/resources.js"></script>
+		<script src="js/enemy.js"></script>
+		<script src="js/player.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/engine.js"></script>
+	</body>
 </html>

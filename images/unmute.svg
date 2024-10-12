@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="#FFD43B" stroke="black" stroke-width="40">
+  <!-- Outer Circle (Face) -->
+  <circle cx="512" cy="512" r="480" fill="#FFD43B" stroke="black" stroke-width="40"/>
+  
+  <!-- Eyes -->
+  <circle cx="360" cy="360" r="50" fill="black"/>
+  <circle cx="664" cy="360" r="50" fill="black"/>
+  
+  <!-- Smiling Mouth (Unmute) -->
+  <path d="M360,640 Q512,800 664,640" fill="none" stroke="black" stroke-width="40" stroke-linecap="round"/>
+</svg>
