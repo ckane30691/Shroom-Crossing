@@ -8,8 +8,9 @@ var Player = function(x, y){
     this.tickCount = 5
     this.numberOfFrames = 3;
     this.ticksPerFrame =7;
-    this.frameIndex = 0
-    this.canMove = true
+    this.frameIndex = 0;
+    this.canMove = true;
+    this.isDead = false;
 };
 
 Player.prototype.update = function(dt){
@@ -77,3 +78,11 @@ Player.prototype.handleInput = function(input){
       };
     }
 };
+
+Player.prototype.reset = function() {
+      this.isDead = false;
+      this.x = 100;
+      this.y = 400;
+      this.canMove = true
+      this.sprite = 'images/shroom.png';
+    }

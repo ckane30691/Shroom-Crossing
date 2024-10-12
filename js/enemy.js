@@ -71,7 +71,7 @@ Enemy.prototype.update = function(dt) {
         player.sprite = 'images/death.png'
         var death = document.getElementsByClassName("death")[0];
         death.play();
-        setTimeout(function(){location.reload()}, 500);
+        player.isDead = true;
     };
 };
 
